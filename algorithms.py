@@ -24,14 +24,13 @@ def missing_number(nums):
 
 
 def two_sum(nums, target):
-    heap_map = {}
+    hash_map = {}
     for i, num in enumerate(nums):
-        if target - num in heap_map:
-            return [heap_map[target-num], i]
+        if target - num in hash_map:
+            return [hash_map[target-num], i]
         else:
-            heap_map[num] = i
+            hash_map[num] = i
 
 
-def two_sum(nums, target):
-    setnums = set(nums)
+
 
