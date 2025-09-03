@@ -33,4 +33,43 @@ def two_sum(nums, target):
 
 
 
+#given the array nums for each nums[i] find out how many numbers in the array are smaller than it
+#that is, for each nums[i] you have to count the number of valid j's such that j != i and nums[j] < nums[i]
+#return the answer in an array
+#Example => Input: nums = [8,1,2,2,3] Output: [4,0,1,1,3]
 
+
+def small_number(nums):
+    smallnum = []
+
+    for i in range(len(nums)):
+        count = 0
+        for j in range(len(nums)):
+            
+            if nums[i] != nums[j] and nums[i] > nums[j]:
+                count +=1
+        smallnum.append(count)
+            
+    return smallnum
+    
+nums = [8,1,2,2,3]
+print(small_number(nums))
+
+
+#another way
+def rank(nums):
+    ranks = {}
+    for i, n in enumerate(nums):
+        if n not in ranks:
+            ranks[n] = i 
+    return ranks
+    
+
+def small_number(nums):
+    sortednums = sorted(nums)
+    ranks = rank(sortednums)
+    smaller = [ranks[num] for num in nums]
+    return smaller
+    
+nums = [8,1,2,2,3]
+print(small_number(nums))
