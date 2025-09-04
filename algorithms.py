@@ -98,3 +98,9 @@ def min_time(points):
 
 pints = [[1,1],[3,4],[-1,0]]
 print(min_time(pints))
+
+
+#Given a m * n matrix return all elements of the matrix in spiral order.
+#Example => Input: matrix = [[1,2,3],[4,5,6],[7,8,9]] Output: [1,2,3,6,9,8,7,4,5]
+
+39:27
